@@ -1,0 +1,4 @@
+---
+# handlers file for apache
+- include_tasks: handlers/enable.yml
+- include_tasks: handlers/restart.yml

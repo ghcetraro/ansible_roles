@@ -1,0 +1,7 @@
+---
+# tasks file for apache
+- import_tasks: tasks/install.yml
+- import_tasks: tasks/sites.yml
+- import_tasks: tasks/modules.yml
+- import_tasks: tasks/web.yml
+- import_tasks: tasks/port.yml

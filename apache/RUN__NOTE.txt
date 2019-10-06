@@ -1,0 +1,21 @@
+RUN NOTE
+
+-- Create ssh key
+
+ssh-keygen -t rsa -b 2048
+
+-- Copy ssh-key
+
+https://github.com/ghcetraro/ansible-ssh-copy-id
+
+-- Give execution permissions
+
+ansible-playbook -i hosts set_sudoer.yml -b -K
+
+-- Check syntax
+
+ansible-playbook runsetup.yml --syntax-check
+
+-- Execution playbok
+
+ansible-playbook runsetup.yml -i hosts
