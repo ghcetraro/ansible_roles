@@ -1,0 +1,6 @@
+{
+  "dns": ["{{ dns01 }}", "{{ dns02 }}"],
+  "insecure-registries": ["{{ registry }}:{{ registry_port  }}"],
+  "iptables": true
+}
+

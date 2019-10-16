@@ -1,0 +1,8 @@
+---
+# tasks file for docker
+- import_tasks: tasks/add_repo.yml
+- import_tasks: tasks/yum_proxy.yml
+- import_tasks: tasks/install_docker.yml
+- import_tasks: tasks/docker_proxy.yml
+- import_tasks: tasks/remove_yum.yml
+- import_tasks: tasks/remove_docker_proxy.yml

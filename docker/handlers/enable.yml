@@ -1,0 +1,4 @@
+- name: enable docker-ce
+  become: yes
+  shell: systemctl enable docker  
+

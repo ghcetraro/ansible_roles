@@ -1,0 +1,10 @@
+---
+- name: install docker-ce
+  yum: 
+    name= "{{ item }}" state=latest
+  with_items:
+    - docker-ce
+    - docker-ce-cli 
+    - containerd.io    
+  notify:
+    - docker started

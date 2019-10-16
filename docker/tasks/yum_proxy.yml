@@ -1,0 +1,3 @@
+- name: yum proxy
+  become: yes
+  template: src=yum.conf dest=/etc/yum.conf

@@ -1,0 +1,6 @@
+- name: Add repository
+  become: yes
+  yum_repository:
+    name: docker-ce
+    description: Docker CE Stable
+    baseurl: https://download.docker.com/linux/centos/7/$basearch/stable
