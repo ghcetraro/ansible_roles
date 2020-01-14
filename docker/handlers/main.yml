@@ -1,0 +1,23 @@
+---
+# handlers file for docker
+#- include_tasks: handlers/enable.yml
+#- include_tasks: handlers/reload.yml
+#- include_tasks: handlers/restart.yml
+
+- name: docker reloaded
+  become: yes
+  service:
+     name=docker
+     state=reloaded
+
+- name: docker restarted
+  become: yes
+  service:
+     name=docker
+     state=restarted
+
+- name: docker started
+  become: yes
+  service:
+    name=docker
+    enabled=yes

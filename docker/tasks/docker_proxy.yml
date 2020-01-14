@@ -1,0 +1,6 @@
+- name: docker proxy
+  become: yes
+  template: src=http-proxy.conf dest=/etc/systemd/system/docker.service.d/http-proxy.conf
+  notify:
+    - docker reloaded
+

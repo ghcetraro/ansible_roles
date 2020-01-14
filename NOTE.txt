@@ -1,0 +1,1 @@
+ansible-playbook -i docker/hosts docker/runsetup.yml

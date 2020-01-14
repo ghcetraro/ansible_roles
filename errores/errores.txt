@@ -1,0 +1,40 @@
+errores
+
+-ver errores
+
+ANSIBLE_DEBUG=1 ansible-playbook -vvv run_apache2.yml -i hosts
+
+ansible-playbook run_apache2.yml --syntax-check
+
+////////////////
+ "module_stdout": "sudo: a password is required\r\n", 
+
+
+%sudo  ALL=(ALL:ALL) NOPASSWD: ALL
+
+
+or
+
+ansible-playbook -i inventory.cfg --limit 192.168.56.12 set_sudoer.yml -b -K
+
+
+ This is the set_sudoer.yml file.
+
+---
+- hosts: all
+  tasks:
+    - lineinfile:
+        path: /etc/sudoers
+        state: present
+        regexp: '^%sudo'
+        line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+        validate: 'visudo -cf %s'
+
+
+////////////
+
+[WARNING] Ansible is in a world writable directory (/etc/ansible/roles/apache), ignoring it as an ansible.cfg source.
+
+
+chmod -R 775 /etc/ansible
+chmod -R 775 ansible.cfg
